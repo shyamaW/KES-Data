@@ -1,0 +1,549 @@
+<?xml version="1.0"?>
+<rdf:RDF xmlns="http://www.semanticweb.org/ontologies/crop_kb/"
+     xml:base="http://www.semanticweb.org/ontologies/crop_kb/"
+     xmlns:owl="http://www.w3.org/2002/07/owl#"
+     xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#"
+     xmlns:xml="http://www.w3.org/XML/1998/namespace"
+     xmlns:xsd="http://www.w3.org/2001/XMLSchema#"
+     xmlns:rdfs="http://www.w3.org/2000/01/rdf-schema#">
+    <owl:Ontology rdf:about="http://www.semanticweb.org/ontologies/crop_kb">
+        <rdfs:comment>This is a Structure to store crop knowledg</rdfs:comment>
+    </owl:Ontology>
+    
+
+
+    <!-- 
+    ///////////////////////////////////////////////////////////////////////////////////////
+    //
+    // Object Properties
+    //
+    ///////////////////////////////////////////////////////////////////////////////////////
+     -->
+
+    
+
+
+    <!-- http://www.semanticweb.org/ontologies/crop_kb#affect -->
+
+    <owl:ObjectProperty rdf:about="http://www.semanticweb.org/ontologies/crop_kb#affect">
+        <owl:inverseOf rdf:resource="http://www.semanticweb.org/ontologies/crop_kb#isAffectedBy"/>
+        <rdfs:domain rdf:resource="http://www.semanticweb.org/ontologies/crop_kb#GrowingProblem"/>
+        <rdfs:range rdf:resource="http://www.semanticweb.org/ontologies/crop_kb#Crop"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://www.semanticweb.org/ontologies/crop_kb#applyInControlMethod -->
+
+    <owl:ObjectProperty rdf:about="http://www.semanticweb.org/ontologies/crop_kb#applyInControlMethod">
+        <owl:inverseOf rdf:resource="http://www.semanticweb.org/ontologies/crop_kb#isStageofCME"/>
+        <rdfs:domain rdf:resource="http://www.semanticweb.org/ontologies/crop_kb#ControlMethodEvent"/>
+        <rdfs:range rdf:resource="http://www.semanticweb.org/ontologies/crop_kb#FarmingStage"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://www.semanticweb.org/ontologies/crop_kb#cause -->
+
+    <owl:ObjectProperty rdf:about="http://www.semanticweb.org/ontologies/crop_kb#cause">
+        <owl:inverseOf rdf:resource="http://www.semanticweb.org/ontologies/crop_kb#isCauseBy"/>
+        <rdfs:domain rdf:resource="http://www.semanticweb.org/ontologies/crop_kb#Cause"/>
+        <rdfs:range rdf:resource="http://www.semanticweb.org/ontologies/crop_kb#GrowingProbelmEvent"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://www.semanticweb.org/ontologies/crop_kb#hasApplicationMethodForCME -->
+
+    <owl:ObjectProperty rdf:about="http://www.semanticweb.org/ontologies/crop_kb#hasApplicationMethodForCME">
+        <owl:inverseOf rdf:resource="http://www.semanticweb.org/ontologies/crop_kb#isApplicationMethofCME"/>
+        <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#FunctionalProperty"/>
+        <rdfs:domain rdf:resource="http://www.semanticweb.org/ontologies/crop_kb#ControlMethodEvent"/>
+        <rdfs:range rdf:resource="http://www.semanticweb.org/ontologies/crop_kb#ApplicationMethod"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://www.semanticweb.org/ontologies/crop_kb#hasAvailablePeriod -->
+
+    <owl:ObjectProperty rdf:about="http://www.semanticweb.org/ontologies/crop_kb#hasAvailablePeriod">
+        <rdfs:domain rdf:resource="http://www.semanticweb.org/ontologies/crop_kb#GrowingProbelmEvent"/>
+        <rdfs:range rdf:resource="http://www.semanticweb.org/ontologies/crop_kb#Season"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://www.semanticweb.org/ontologies/crop_kb#hasCausalAgent -->
+
+    <owl:ObjectProperty rdf:about="http://www.semanticweb.org/ontologies/crop_kb#hasCausalAgent">
+        <owl:inverseOf rdf:resource="http://www.semanticweb.org/ontologies/crop_kb#isCausalAgentOf"/>
+        <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#FunctionalProperty"/>
+        <rdfs:domain rdf:resource="http://www.semanticweb.org/ontologies/crop_kb#GrowingProbelmEvent"/>
+        <rdfs:range rdf:resource="http://www.semanticweb.org/ontologies/crop_kb#CausalAgent"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://www.semanticweb.org/ontologies/crop_kb#hasControlMethod -->
+
+    <owl:ObjectProperty rdf:about="http://www.semanticweb.org/ontologies/crop_kb#hasControlMethod">
+        <owl:inverseOf rdf:resource="http://www.semanticweb.org/ontologies/crop_kb#isControlMethodOf"/>
+        <rdfs:domain rdf:resource="http://www.semanticweb.org/ontologies/crop_kb#GrowingProbelmEvent"/>
+        <rdfs:range rdf:resource="http://www.semanticweb.org/ontologies/crop_kb#ControlMethod"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://www.semanticweb.org/ontologies/crop_kb#hasControlMethodEvent -->
+
+    <owl:ObjectProperty rdf:about="http://www.semanticweb.org/ontologies/crop_kb#hasControlMethodEvent">
+        <owl:inverseOf rdf:resource="http://www.semanticweb.org/ontologies/crop_kb#isControlMethodEventOf"/>
+        <rdfs:domain rdf:resource="http://www.semanticweb.org/ontologies/crop_kb#GrowingProbelmEvent"/>
+        <rdfs:range rdf:resource="http://www.semanticweb.org/ontologies/crop_kb#ControlMethodEvent"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://www.semanticweb.org/ontologies/crop_kb#hasCultivationSeason -->
+
+    <owl:ObjectProperty rdf:about="http://www.semanticweb.org/ontologies/crop_kb#hasCultivationSeason">
+        <rdfs:domain rdf:resource="http://www.semanticweb.org/ontologies/crop_kb#Crop"/>
+        <rdfs:range rdf:resource="http://www.semanticweb.org/ontologies/crop_kb#Season"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://www.semanticweb.org/ontologies/crop_kb#hasGrowingProblem -->
+
+    <owl:ObjectProperty rdf:about="http://www.semanticweb.org/ontologies/crop_kb#hasGrowingProblem">
+        <owl:inverseOf rdf:resource="http://www.semanticweb.org/ontologies/crop_kb#isGrowingProblemOf"/>
+        <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#FunctionalProperty"/>
+        <rdfs:domain rdf:resource="http://www.semanticweb.org/ontologies/crop_kb#GrowingProbelmEvent"/>
+        <rdfs:range rdf:resource="http://www.semanticweb.org/ontologies/crop_kb#GrowingProblem"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://www.semanticweb.org/ontologies/crop_kb#hasGrowingProblemEvent -->
+
+    <owl:ObjectProperty rdf:about="http://www.semanticweb.org/ontologies/crop_kb#hasGrowingProblemEvent">
+        <owl:inverseOf rdf:resource="http://www.semanticweb.org/ontologies/crop_kb#isGrowingProblemEventOf"/>
+        <rdfs:domain rdf:resource="http://www.semanticweb.org/ontologies/crop_kb#Crop"/>
+        <rdfs:range rdf:resource="http://www.semanticweb.org/ontologies/crop_kb#GrowingProbelmEvent"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://www.semanticweb.org/ontologies/crop_kb#hasLocationForCME -->
+
+    <owl:ObjectProperty rdf:about="http://www.semanticweb.org/ontologies/crop_kb#hasLocationForCME">
+        <owl:inverseOf rdf:resource="http://www.semanticweb.org/ontologies/crop_kb#isLocationForCME"/>
+        <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#FunctionalProperty"/>
+        <rdfs:domain rdf:resource="http://www.semanticweb.org/ontologies/crop_kb#ControlMethodEvent"/>
+        <rdfs:range rdf:resource="http://www.semanticweb.org/ontologies/crop_kb#Location"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://www.semanticweb.org/ontologies/crop_kb#hasPesticideOf -->
+
+    <owl:ObjectProperty rdf:about="http://www.semanticweb.org/ontologies/crop_kb#hasPesticideOf">
+        <owl:inverseOf rdf:resource="http://www.semanticweb.org/ontologies/crop_kb#isPesticideOf"/>
+        <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#FunctionalProperty"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://www.semanticweb.org/ontologies/crop_kb#hasPreventionMethod -->
+
+    <owl:ObjectProperty rdf:about="http://www.semanticweb.org/ontologies/crop_kb#hasPreventionMethod">
+        <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#FunctionalProperty"/>
+        <rdfs:domain rdf:resource="http://www.semanticweb.org/ontologies/crop_kb#GrowingProbelmEvent"/>
+        <rdfs:range rdf:resource="http://www.semanticweb.org/ontologies/crop_kb#PreventionMethods"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://www.semanticweb.org/ontologies/crop_kb#hasQuantityForControlMethodEvent -->
+
+    <owl:ObjectProperty rdf:about="http://www.semanticweb.org/ontologies/crop_kb#hasQuantityForControlMethodEvent">
+        <owl:inverseOf rdf:resource="http://www.semanticweb.org/ontologies/crop_kb#isQuantityForControlMethodEvent"/>
+        <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#FunctionalProperty"/>
+        <rdfs:domain rdf:resource="http://www.semanticweb.org/ontologies/crop_kb#ControlMethodEvent"/>
+        <rdfs:range rdf:resource="http://www.semanticweb.org/ontologies/crop_kb#Quantity"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://www.semanticweb.org/ontologies/crop_kb#hasSoilTypeOfCME -->
+
+    <owl:ObjectProperty rdf:about="http://www.semanticweb.org/ontologies/crop_kb#hasSoilTypeOfCME">
+        <owl:inverseOf rdf:resource="http://www.semanticweb.org/ontologies/crop_kb#isSoilTypeForCME"/>
+        <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#FunctionalProperty"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://www.semanticweb.org/ontologies/crop_kb#hasSoilTypeforVariety -->
+
+    <owl:ObjectProperty rdf:about="http://www.semanticweb.org/ontologies/crop_kb#hasSoilTypeforVariety">
+        <rdfs:domain rdf:resource="http://www.semanticweb.org/ontologies/crop_kb#Variety"/>
+        <rdfs:range rdf:resource="http://www.semanticweb.org/ontologies/crop_kb#SoilType"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://www.semanticweb.org/ontologies/crop_kb#hasSymptom -->
+
+    <owl:ObjectProperty rdf:about="http://www.semanticweb.org/ontologies/crop_kb#hasSymptom">
+        <owl:inverseOf rdf:resource="http://www.semanticweb.org/ontologies/crop_kb#isSymptomOf"/>
+        <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#FunctionalProperty"/>
+        <rdfs:domain rdf:resource="http://www.semanticweb.org/ontologies/crop_kb#GrowingProbelmEvent"/>
+        <rdfs:range rdf:resource="http://www.semanticweb.org/ontologies/crop_kb#Symptom"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://www.semanticweb.org/ontologies/crop_kb#hasTimeOfApplicationForCME -->
+
+    <owl:ObjectProperty rdf:about="http://www.semanticweb.org/ontologies/crop_kb#hasTimeOfApplicationForCME">
+        <owl:inverseOf rdf:resource="http://www.semanticweb.org/ontologies/crop_kb#isTimeOfApplicationOfCME"/>
+        <rdfs:domain rdf:resource="http://www.semanticweb.org/ontologies/crop_kb#ControlMethodEvent"/>
+        <rdfs:range rdf:resource="http://www.semanticweb.org/ontologies/crop_kb#TimeOfApplication"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://www.semanticweb.org/ontologies/crop_kb#hasUnitsForControlMethodEvent -->
+
+    <owl:ObjectProperty rdf:about="http://www.semanticweb.org/ontologies/crop_kb#hasUnitsForControlMethodEvent">
+        <owl:inverseOf rdf:resource="http://www.semanticweb.org/ontologies/crop_kb#isUnitsForControlMethodEvent"/>
+        <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#FunctionalProperty"/>
+        <rdfs:domain rdf:resource="http://www.semanticweb.org/ontologies/crop_kb#ControlMethodEvent"/>
+        <rdfs:range rdf:resource="http://www.semanticweb.org/ontologies/crop_kb#Unit"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://www.semanticweb.org/ontologies/crop_kb#hasVariety -->
+
+    <owl:ObjectProperty rdf:about="http://www.semanticweb.org/ontologies/crop_kb#hasVariety">
+        <rdfs:domain rdf:resource="http://www.semanticweb.org/ontologies/crop_kb#Crop"/>
+        <rdfs:range rdf:resource="http://www.semanticweb.org/ontologies/crop_kb#Variety"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://www.semanticweb.org/ontologies/crop_kb#isAffectedBy -->
+
+    <owl:ObjectProperty rdf:about="http://www.semanticweb.org/ontologies/crop_kb#isAffectedBy"/>
+    
+
+
+    <!-- http://www.semanticweb.org/ontologies/crop_kb#isApplicationMethofCME -->
+
+    <owl:ObjectProperty rdf:about="http://www.semanticweb.org/ontologies/crop_kb#isApplicationMethofCME"/>
+    
+
+
+    <!-- http://www.semanticweb.org/ontologies/crop_kb#isCausalAgentOf -->
+
+    <owl:ObjectProperty rdf:about="http://www.semanticweb.org/ontologies/crop_kb#isCausalAgentOf"/>
+    
+
+
+    <!-- http://www.semanticweb.org/ontologies/crop_kb#isCauseBy -->
+
+    <owl:ObjectProperty rdf:about="http://www.semanticweb.org/ontologies/crop_kb#isCauseBy">
+        <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#FunctionalProperty"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://www.semanticweb.org/ontologies/crop_kb#isControlMethodEventOf -->
+
+    <owl:ObjectProperty rdf:about="http://www.semanticweb.org/ontologies/crop_kb#isControlMethodEventOf">
+        <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#FunctionalProperty"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://www.semanticweb.org/ontologies/crop_kb#isControlMethodOf -->
+
+    <owl:ObjectProperty rdf:about="http://www.semanticweb.org/ontologies/crop_kb#isControlMethodOf"/>
+    
+
+
+    <!-- http://www.semanticweb.org/ontologies/crop_kb#isGrowingProblemEventOf -->
+
+    <owl:ObjectProperty rdf:about="http://www.semanticweb.org/ontologies/crop_kb#isGrowingProblemEventOf">
+        <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#FunctionalProperty"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://www.semanticweb.org/ontologies/crop_kb#isGrowingProblemOf -->
+
+    <owl:ObjectProperty rdf:about="http://www.semanticweb.org/ontologies/crop_kb#isGrowingProblemOf"/>
+    
+
+
+    <!-- http://www.semanticweb.org/ontologies/crop_kb#isLocationForCME -->
+
+    <owl:ObjectProperty rdf:about="http://www.semanticweb.org/ontologies/crop_kb#isLocationForCME"/>
+    
+
+
+    <!-- http://www.semanticweb.org/ontologies/crop_kb#isPesticideOf -->
+
+    <owl:ObjectProperty rdf:about="http://www.semanticweb.org/ontologies/crop_kb#isPesticideOf">
+        <rdfs:domain rdf:resource="http://www.semanticweb.org/ontologies/crop_kb#Pesticide"/>
+        <rdfs:range rdf:resource="http://www.semanticweb.org/ontologies/crop_kb#ControlMethodEvent"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://www.semanticweb.org/ontologies/crop_kb#isQuantityForControlMethodEvent -->
+
+    <owl:ObjectProperty rdf:about="http://www.semanticweb.org/ontologies/crop_kb#isQuantityForControlMethodEvent"/>
+    
+
+
+    <!-- http://www.semanticweb.org/ontologies/crop_kb#isSoilTypeForCME -->
+
+    <owl:ObjectProperty rdf:about="http://www.semanticweb.org/ontologies/crop_kb#isSoilTypeForCME">
+        <rdfs:domain rdf:resource="http://www.semanticweb.org/ontologies/crop_kb#SoilType"/>
+        <rdfs:range rdf:resource="http://www.semanticweb.org/ontologies/crop_kb#ControlMethodEvent"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://www.semanticweb.org/ontologies/crop_kb#isStageofCME -->
+
+    <owl:ObjectProperty rdf:about="http://www.semanticweb.org/ontologies/crop_kb#isStageofCME"/>
+    
+
+
+    <!-- http://www.semanticweb.org/ontologies/crop_kb#isSymptomOf -->
+
+    <owl:ObjectProperty rdf:about="http://www.semanticweb.org/ontologies/crop_kb#isSymptomOf"/>
+    
+
+
+    <!-- http://www.semanticweb.org/ontologies/crop_kb#isTimeOfApplicationOfCME -->
+
+    <owl:ObjectProperty rdf:about="http://www.semanticweb.org/ontologies/crop_kb#isTimeOfApplicationOfCME"/>
+    
+
+
+    <!-- http://www.semanticweb.org/ontologies/crop_kb#isUnitsForControlMethodEvent -->
+
+    <owl:ObjectProperty rdf:about="http://www.semanticweb.org/ontologies/crop_kb#isUnitsForControlMethodEvent"/>
+    
+
+
+    <!-- http://www.semanticweb.org/ontologies/crop_kb#isVarietyOf -->
+
+    <owl:ObjectProperty rdf:about="http://www.semanticweb.org/ontologies/crop_kb#isVarietyOf">
+        <rdfs:subPropertyOf rdf:resource="http://www.w3.org/2002/07/owl#topObjectProperty"/>
+        <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#FunctionalProperty"/>
+        <rdfs:domain rdf:resource="http://www.semanticweb.org/ontologies/crop_kb#Variety"/>
+        <rdfs:range rdf:resource="http://www.semanticweb.org/ontologies/crop_kb#Crop"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- 
+    ///////////////////////////////////////////////////////////////////////////////////////
+    //
+    // Classes
+    //
+    ///////////////////////////////////////////////////////////////////////////////////////
+     -->
+
+    
+
+
+    <!-- http://www.semanticweb.org/ontologies/crop_kb#ApplicationMethod -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/ontologies/crop_kb#ApplicationMethod"/>
+    
+
+
+    <!-- http://www.semanticweb.org/ontologies/crop_kb#CausalAgent -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/ontologies/crop_kb#CausalAgent"/>
+    
+
+
+    <!-- http://www.semanticweb.org/ontologies/crop_kb#Cause -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/ontologies/crop_kb#Cause"/>
+    
+
+
+    <!-- http://www.semanticweb.org/ontologies/crop_kb#ControlMethod -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/ontologies/crop_kb#ControlMethod"/>
+    
+
+
+    <!-- http://www.semanticweb.org/ontologies/crop_kb#ControlMethodEvent -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/ontologies/crop_kb#ControlMethodEvent"/>
+    
+
+
+    <!-- http://www.semanticweb.org/ontologies/crop_kb#Crop -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/ontologies/crop_kb#Crop"/>
+    
+
+
+    <!-- http://www.semanticweb.org/ontologies/crop_kb#Disease -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/ontologies/crop_kb#Disease">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/ontologies/crop_kb#GrowingProblem"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/ontologies/crop_kb#DiseaseControlMethod -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/ontologies/crop_kb#DiseaseControlMethod">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/ontologies/crop_kb#ControlMethod"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/ontologies/crop_kb#FarmingStage -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/ontologies/crop_kb#FarmingStage"/>
+    
+
+
+    <!-- http://www.semanticweb.org/ontologies/crop_kb#GrowingProbelmEvent -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/ontologies/crop_kb#GrowingProbelmEvent"/>
+    
+
+
+    <!-- http://www.semanticweb.org/ontologies/crop_kb#GrowingProblem -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/ontologies/crop_kb#GrowingProblem"/>
+    
+
+
+    <!-- http://www.semanticweb.org/ontologies/crop_kb#Location -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/ontologies/crop_kb#Location"/>
+    
+
+
+    <!-- http://www.semanticweb.org/ontologies/crop_kb#Pest -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/ontologies/crop_kb#Pest">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/ontologies/crop_kb#GrowingProblem"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/ontologies/crop_kb#PestContolMethod -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/ontologies/crop_kb#PestContolMethod">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/ontologies/crop_kb#ControlMethod"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/ontologies/crop_kb#Pesticide -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/ontologies/crop_kb#Pesticide"/>
+    
+
+
+    <!-- http://www.semanticweb.org/ontologies/crop_kb#PreventionMethods -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/ontologies/crop_kb#PreventionMethods"/>
+    
+
+
+    <!-- http://www.semanticweb.org/ontologies/crop_kb#Quantity -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/ontologies/crop_kb#Quantity"/>
+    
+
+
+    <!-- http://www.semanticweb.org/ontologies/crop_kb#Root_Crop -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/ontologies/crop_kb#Root_Crop">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/ontologies/crop_kb#Crop"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/ontologies/crop_kb#Season -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/ontologies/crop_kb#Season"/>
+    
+
+
+    <!-- http://www.semanticweb.org/ontologies/crop_kb#SoilType -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/ontologies/crop_kb#SoilType"/>
+    
+
+
+    <!-- http://www.semanticweb.org/ontologies/crop_kb#Symptom -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/ontologies/crop_kb#Symptom"/>
+    
+
+
+    <!-- http://www.semanticweb.org/ontologies/crop_kb#TimeOfApplication -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/ontologies/crop_kb#TimeOfApplication"/>
+    
+
+
+    <!-- http://www.semanticweb.org/ontologies/crop_kb#Unit -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/ontologies/crop_kb#Unit"/>
+    
+
+
+    <!-- http://www.semanticweb.org/ontologies/crop_kb#Variety -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/ontologies/crop_kb#Variety">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/ontologies/crop_kb#Crop"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/ontologies/crop_kb#Vegetable -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/ontologies/crop_kb#Vegetable">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/ontologies/crop_kb#Crop"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/ontologies/crop_kb#Weed -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/ontologies/crop_kb#Weed">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/ontologies/crop_kb#GrowingProblem"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/ontologies/crop_kb#WeedControlMethod -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/ontologies/crop_kb#WeedControlMethod">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/ontologies/crop_kb#ControlMethod"/>
+    </owl:Class>
+</rdf:RDF>
+
+
+
+<!-- Generated by the OWL API (version 4.5.26.2023-07-17T20:34:13Z) https://github.com/owlcs/owlapi -->
+
